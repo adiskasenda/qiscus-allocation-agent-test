@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"log"
 	"net/http"
 
@@ -19,16 +18,6 @@ import (
 
 func main() {
 	config.Init()
-
-	db, err := sql.Open("postgres", "postgres://postgres:postgres@localhost:5432/qiscus?sslmode=disable")
-	if err != nil {
-		log.Fatal("❌ Gagal koneksi DB:", err)
-	}
-	defer db.Close()
-
-	if err := db.Ping(); err != nil {
-		log.Fatal("❌ DB tidak tersedia:", err)
-	}
 
 	rdb := redis.NewClient((&redis.Options{
 		Addr: "localhost:6379",
