@@ -40,10 +40,10 @@ flowchart TD
 2. ERD Diagram for process allocation agent
 ```
 flowchart TD
-    A(["Start"]) --> B["Retry worker 30 sec"]
+    A(["Start"]) --> B["Retry worker 10 sec"]
     B --> C["Get RoomId from Redis"]
     C --> n1["isEmty RoomId?"]
-    n1 -- yes --> n2["sleep 60 sec &amp; retry"]
+    n1 -- yes --> n2["sleep 30 sec &amp; retry"]
     n1 -- no --> n3["GetAssignedAgent from redis"]
     n2 --> A
     n3 --> n4["isAssign?"]
@@ -68,7 +68,8 @@ flowchart TD
     n9@{ shape: diam}
 ```
 
-![image](https://github.com/user-attachments/assets/827a2d14-f711-4393-839d-e670df5c80d1)
+![image](https://github.com/user-attachments/assets/bce033b1-16ae-40c0-8189-f6faf6714c9b)
+
   
 3. Sequence Diagram
 ```
