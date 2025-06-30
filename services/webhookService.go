@@ -32,11 +32,11 @@ func (s *AllocationService) ProcessQueue() {
 		roomID, err := s.redis.PopChat(ctx)
 
 		if err != nil {
-			time.Sleep(60 * time.Second)
+			time.Sleep(30 * time.Second)
 			continue
 		}
 		if roomID == "" {
-			time.Sleep(60 * time.Second)
+			time.Sleep(30 * time.Second)
 			continue
 		}
 
