@@ -14,6 +14,15 @@ How to Run?
 go run main.go
 ```
 
+5. for access public you can run ngrok 
+```
+ngrok http http://localhost:8080
+```
+6. set the webhook with:
+```
+{ngrokUrl}/webhook
+```
+
 Flow:
 1. ERD Diagram for incoming chat to enqueue
 ```
